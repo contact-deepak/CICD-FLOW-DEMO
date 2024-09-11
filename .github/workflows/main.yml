@@ -1,0 +1,21 @@
+name: Call API on Commit
+
+# Trigger the workflow on every push to the repository
+on:
+  push:
+    branches:
+      - main  # Adjust this to the branch you want to trigger on
+
+jobs:
+  call_api:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Call External API
+      run: |
+        curl -X POST https://l2lzlm2by8.execute-api.us-west-2.amazonaws.com/pord/path \
+        -H "Content-Type: application/json" \
+        -d '{}'
