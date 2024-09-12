@@ -14,8 +14,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Wait for 20 seconds
-        run: sleep 20  # Delay for 60 seconds (1 minute)
+      - name: Wait for 30 seconds
+        run: sleep 30  # Delay for 60 seconds (1 minute)
 
       - name: Call External API
         run: |
