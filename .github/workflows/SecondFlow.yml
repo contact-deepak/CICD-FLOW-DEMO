@@ -1,0 +1,23 @@
+# .github/workflows/second-workflow.yml
+name: Second Workflow
+
+on:
+  workflow_run:
+    workflows: ["FirstFlow"]  # Name of the first workflow
+    types:
+      - completed  # Trigger when the first workflow is completed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Wait for 20 seconds
+        run: sleep 20  # Delay for 60 seconds (1 minute)
+
+      - name: Run subsequent actions
+        run: echo "Running the second workflow after a 1-minute delay"
+
+      # Add more steps as needed
