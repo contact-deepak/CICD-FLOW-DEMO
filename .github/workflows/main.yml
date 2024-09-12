@@ -1,4 +1,4 @@
-name: Call API on Commit
+name: FirstFlow
 
 # Trigger the workflow on every push to the repository
 on:
